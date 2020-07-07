@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package main;
+
+service A{
+  rpc A(Consignment) returns (Response) {}
+}
+message Consignment{
+  SRequest S = 1;
+  FRequest F = 2;
+}
+
+message SRequest{
+  string x = 1;
+  string y = 2;
+  string z = 3;
+  string d = 4;
+}
+
+message FRequest{
+  map<string,string> inputVar = 1;
+}
+
+message Response{
+  bool result = 1;
+  //map<string, string> inputVar= 1;
+}
